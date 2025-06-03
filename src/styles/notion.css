@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --notion-font: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    
+    /* Oceanic color palette */
+    --oceanic-surface: #f0f4f8;
+    --oceanic-surface-dark: #1a2634;
+    --oceanic-blue: #0ea5e9;
+    --oceanic-blue-dark: #0284c7;
+    --oceanic-green: #10b981;
+    --oceanic-green-dark: #059669;
+    --oceanic-text: #334155;
+    --oceanic-text-dark: #e2e8f0;
+    --oceanic-border: #cbd5e1;
+    --oceanic-border-dark: #334155;
+  }
+}
+
+@layer components {
+  .notion-page {
+    @apply min-h-screen bg-[var(--oceanic-surface)] dark:bg-[var(--oceanic-surface-dark)] text-[var(--oceanic-text)] dark:text-[var(--oceanic-text-dark)];
+  }
+
+  .notion-block {
+    @apply bg-white dark:bg-[#1e293b] rounded-lg border border-[var(--oceanic-border)] dark:border-[var(--oceanic-border-dark)] shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+
+  .notion-text {
+    @apply font-[var(--notion-font)] text-[16px] leading-[1.5];
+  }
+
+  .notion-title {
+    @apply font-[var(--notion-font)] font-bold text-[40px] leading-[1.2] tracking-[-0.02em] text-[var(--oceanic-text)] dark:text-[var(--oceanic-text-dark)];
+  }
+
+  .notion-h1 {
+    @apply font-[var(--notion-font)] font-bold text-[2em] leading-[1.2] tracking-[-0.02em] text-[var(--oceanic-text)] dark:text-[var(--oceanic-text-dark)];
+  }
+
+  .notion-h2 {
+    @apply font-[var(--notion-font)] font-bold text-[1.5em] leading-[1.3] text-[var(--oceanic-text)] dark:text-[var(--oceanic-text-dark)];
+  }
+
+  .notion-h3 {
+    @apply font-[var(--notion-font)] font-bold text-[1.25em] leading-[1.3] text-[var(--oceanic-text)] dark:text-[var(--oceanic-text-dark)];
+  }
+
+  .notion-button {
+    @apply px-4 py-2 bg-transparent hover:bg-[var(--oceanic-surface)] dark:hover:bg-[#2a3b4d] text-[var(--oceanic-text)] dark:text-[var(--oceanic-text-dark)] rounded-md transition-colors duration-200 font-medium;
+  }
+
+  .notion-button-primary {
+    @apply px-4 py-2 bg-[var(--oceanic-blue)] hover:bg-[var(--oceanic-blue-dark)] text-white rounded-md transition-colors duration-200 font-medium;
+  }
+
+  .notion-input {
+    @apply w-full px-3 py-2 bg-white dark:bg-[#1e293b] border border-[var(--oceanic-border)] dark:border-[var(--oceanic-border-dark)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--oceanic-blue)] dark:focus:ring-[var(--oceanic-blue-dark)] transition-shadow duration-200;
+  }
+
+  .notion-checkbox {
+    @apply h-4 w-4 rounded border-[var(--oceanic-border)] dark:border-[var(--oceanic-border-dark)] text-[var(--oceanic-blue)] focus:ring-[var(--oceanic-blue)] transition-colors duration-200;
+  }
+
+  .notion-menu {
+    @apply absolute z-50 mt-2 w-48 rounded-md bg-white dark:bg-[#1e293b] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none;
+  }
+
+  .notion-menu-item {
+    @apply block px-4 py-2 text-sm text-[var(--oceanic-text)] dark:text-[var(--oceanic-text-dark)] hover:bg-[var(--oceanic-surface)] dark:hover:bg-[#2a3b4d];
+  }
+
+  .notion-tag {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-[var(--oceanic-surface)] dark:bg-[#2a3b4d] text-[var(--oceanic-text)] dark:text-[var(--oceanic-text-dark)];
+  }
+
+  .notion-divider {
+    @apply h-px bg-[var(--oceanic-border)] dark:bg-[var(--oceanic-border-dark)] my-4;
+  }
+
+  .notion-card {
+    @apply p-4 bg-white dark:bg-[#1e293b] rounded-lg border border-[var(--oceanic-border)] dark:border-[var(--oceanic-border-dark)] hover:shadow-lg transition-all duration-200 cursor-pointer;
+  }
+
+  .notion-icon-button {
+    @apply p-2 hover:bg-[var(--oceanic-surface)] dark:hover:bg-[#2a3b4d] rounded-md transition-colors duration-200;
+  }
+
+  .notion-dropdown {
+    @apply relative inline-block text-left;
+  }
+
+  .notion-dropdown-button {
+    @apply inline-flex justify-center w-full rounded-md border border-[var(--oceanic-border)] dark:border-[var(--oceanic-border-dark)] px-4 py-2 bg-white dark:bg-[#1e293b] text-sm font-medium text-[var(--oceanic-text)] dark:text-[var(--oceanic-text-dark)] hover:bg-[var(--oceanic-surface)] dark:hover:bg-[#2a3b4d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[var(--oceanic-surface)] focus:ring-[var(--oceanic-blue)];
+  }
+
+  .notion-modal {
+    @apply fixed inset-0 z-50 overflow-y-auto;
+  }
+
+  .notion-modal-overlay {
+    @apply fixed inset-0 bg-[var(--oceanic-text)] bg-opacity-50 transition-opacity;
+  }
+
+  .notion-modal-content {
+    @apply relative bg-white dark:bg-[#1e293b] rounded-lg mx-auto my-8 max-w-3xl w-full p-6 shadow-xl;
+  }
+
+  .notion-hover-trigger {
+    @apply opacity-0 group-hover:opacity-100 transition-opacity duration-200;
+  }
+
+  /* Priority colors */
+  .priority-high {
+    @apply bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300;
+  }
+
+  .priority-medium {
+    @apply bg-[var(--oceanic-blue)]/10 dark:bg-[var(--oceanic-blue)]/20 text-[var(--oceanic-blue)] dark:text-[var(--oceanic-blue)]/80;
+  }
+
+  .priority-low {
+    @apply bg-[var(--oceanic-green)]/10 dark:bg-[var(--oceanic-green)]/20 text-[var(--oceanic-green)] dark:text-[var(--oceanic-green)]/80;
+  }
+} 
