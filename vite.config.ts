@@ -35,12 +35,9 @@ export default defineConfig({
     },
   },
   esbuild: {
-    tsconfigRaw: {
-      compilerOptions: {
-        skipLibCheck: true,
-        skipDefaultLibCheck: true,
-      },
-    },
+    logOverride: {
+      'this-is-undefined-in-esm': 'silent'
+    }
   },
   server: {
     port: 5173,

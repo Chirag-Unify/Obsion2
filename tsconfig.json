@@ -23,8 +23,7 @@
     "checkJs": false,
     "noImplicitAny": false,
     "noImplicitThis": false,
-    "noImplicitReturns": false,
-    "suppressImplicitAnyIndexErrors": true
+    "noImplicitReturns": false
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
