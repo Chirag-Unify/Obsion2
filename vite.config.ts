@@ -26,6 +26,21 @@ export default defineConfig({
     commonjsOptions: {
       include: [/node_modules/],
     },
+    sourcemap: true,
+    rollupOptions: {
+      onwarn(warning, warn) {
+        if (warning.code?.includes('TS')) return;
+        warn(warning);
+      },
+    },
+  },
+  esbuild: {
+    tsconfigRaw: {
+      compilerOptions: {
+        skipLibCheck: true,
+        skipDefaultLibCheck: true,
+      },
+    },
   },
   server: {
     port: 5173,
